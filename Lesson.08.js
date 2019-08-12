@@ -15,9 +15,7 @@ const store = Redux.createStore(reducer);
 let count = 0;
 
 // change code below this line
-function increment() {
-  return count += 1;
-}
+const increment = () => count += 1;
 
 store.subscribe(increment);
 // change code above this line
