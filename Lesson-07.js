@@ -31,6 +31,7 @@ const authReducer = (state = defaultState, action) => {
 
 const store = Redux.createStore(authReducer);
 
+// Actions
 const loginUser = () => {
   return {
     type: LOGIN
