@@ -9,6 +9,7 @@ const reducer = (state = 0, action) => {
   }
 };
 
+//** Creating Store
 const store = Redux.createStore(reducer);
 
 // global count variable:
