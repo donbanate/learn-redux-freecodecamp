@@ -88,8 +88,20 @@ class TypesOfFood extends React.Component {
     return (
       <div>
         <h1>Types of Food:</h1>
-        <Fruits />
+        <Fruits /> 
       </div>
     );
   }
-};
+}
+
+class MyComponent extends React.Component { 
+  render() {
+    return (
+      <div>
+        <h1>My First React Component!</h1>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<MyComponent />, document.getElementById("challenge-node"));
