@@ -124,10 +124,12 @@ const Camper = (props) => {
   );
 }
 
+// Set a default props
 Camper.defaultProps = {
   name: 'CamperBot'
 }
 
+// Checking the prop type
 Camper.propTypes = {
   name: PropTypes.string.isRequired
 }
