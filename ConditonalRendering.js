@@ -1,4 +1,3 @@
-
 // * If/Else Condition (Conditional Rendering)
 class MyComponent extends React.Component {
   constructor(props) {
@@ -36,12 +35,12 @@ class MyComponent extends React.Component {
    */
   render() {
     // change code below this line
-      return (
-        <div>
-          <button onClick={this.toggleDisplay}>Toggle Display</button>
-          {this.state.display && <h1>Displayed!</h1>}
-        </div>
-      );
+    return (
+      <div>
+        <button onClick={this.toggleDisplay}>Toggle Display</button>
+        {this.state.display && <h1>Displayed!</h1>}
+      </div>
+    );
   }
 }
 
@@ -49,16 +48,16 @@ class MyComponent extends React.Component {
 const inputStyle = {
   width: 235,
   margin: 5
-}
+};
 
 class CheckUserAge extends React.Component {
   constructor(props) {
     super(props);
     // change code below this line
     this.state = {
-      input: '',
+      input: "",
       age: 0
-    }
+    };
     // change code above this line
     this.submit = this.submit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -66,7 +65,7 @@ class CheckUserAge extends React.Component {
   handleChange(e) {
     this.setState({
       input: e.target.value,
-      userAge: ''
+      userAge: ""
     });
   }
   submit() {
@@ -85,11 +84,51 @@ class CheckUserAge extends React.Component {
           style={inputStyle}
           type="number"
           value={this.state.input}
-          onChange={this.handleChange} /><br />
-        {this.state.age > 18 ? (
-          buttonThree
-        ) : (buttonTwo, buttonOne)}
+          onChange={this.handleChange}
+        />
+        <br />
+        {this.state.age > 18 ? buttonThree : (buttonTwo, buttonOne)}
       </div>
     );
   }
-};
+}
+
+/**
+ * Game of Chance
+ */
+
+class Results extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h1>{this.props.fiftyFifty ? "You won!" : "You lose!"}</h1>;
+  }
+}
+
+class GameOfChance extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 1
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      counter: this.state.counter + 1 // Tries counter
+    });
+  }
+  render() {
+    let expression = Math.floor(Math.random() * Math.floor(2)); // <- random number 1 or 0
+    return (
+      <div>
+        <button onClick={this.handleClick}>Play Again</button>
+        {/* change code below this line */}
+        <Results fiftyFifty={expression} />
+        {/* change code above this line */}
+        <p>{"Turn: " + this.state.counter}</p>
+      </div>
+    );
+  }
+}
