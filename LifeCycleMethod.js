@@ -81,6 +81,7 @@ class MyComponent extends React.Component {
 }
 
 //* Component will receive props
+// Managing Props
 class Dialog extends React.Component {
   constructor(props) {
     super(props);
